@@ -1,5 +1,4 @@
 Name:           libxslt
-%define soname  %{name}
 Version:        1.1.26
 Release:        0
 Summary:        XSL Transformation Library
@@ -35,7 +34,7 @@ Summary:        Include Files and Libraries mandatory for Development
 License:        LGPL-2.1+
 Group:          Development/Libraries/C and C++
 Requires:       %{name}-tools = %version
-Requires:       %{soname} = %{version}
+Requires:       libxslt = %{version}
 Requires:       glibc-devel
 Requires:       libgcrypt-devel
 Requires:       libgpg-error-devel
@@ -77,12 +76,13 @@ rm -fr %{buildroot}%{_datadir}/doc
 install -ma=r '-t%{buildroot}%{_mandir}/man1' '%{SOURCE3}'
 
 
-%post -n %{soname} -p /sbin/ldconfig
+%post -n libxslt -p /sbin/ldconfig
 
-%postun -n %{soname} -p /sbin/ldconfig
+%postun -n libxslt -p /sbin/ldconfig
 
-%files -n %{soname}
+%files -n libxslt
 %defattr(-, root, root)
+%license COPYING Copyright
 %{_libdir}/lib*.so.*
 
 %files devel
