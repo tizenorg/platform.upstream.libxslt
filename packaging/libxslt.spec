@@ -9,6 +9,7 @@ Url:            http://xmlsoft.org/XSLT/
 Source:         %{name}-%{version}.tar.bz2
 Source2:        baselibs.conf
 Source3:        xslt-config.1.gz
+Source1001: 	libxslt.manifest
 BuildRequires:  libgcrypt-devel
 BuildRequires:  libgpg-error-devel
 BuildRequires:  libtool
@@ -55,6 +56,7 @@ This package contains xsltproc, a command line interface to the XSLT engine.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 autoreconf --force --install
@@ -81,11 +83,13 @@ install -ma=r '-t%{buildroot}%{_mandir}/man1' '%{SOURCE3}'
 %postun -n libxslt -p /sbin/ldconfig
 
 %files -n libxslt
+%manifest %{name}.manifest
 %defattr(-, root, root)
 %license COPYING Copyright
 %{_libdir}/lib*.so.*
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-, root, root)
 %{_libdir}/lib*.so
 %{_libdir}/*.sh
@@ -97,6 +101,7 @@ install -ma=r '-t%{buildroot}%{_mandir}/man1' '%{SOURCE3}'
 %doc %{_mandir}/man3/*
 
 %files tools
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_bindir}/xsltproc
 %doc %{_mandir}/man1/xsltproc.*
