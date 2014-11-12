@@ -1,15 +1,15 @@
 Name:           libxslt
-Version:        1.1.26
+Version:        1.1.28
 Release:        0
 Summary:        XSL Transformation Library
 License:        MIT and GPL-2.0+
 Group:          System/Libraries
-#
 Url:            http://xmlsoft.org/XSLT/
 Source:         %{name}-%{version}.tar.bz2
+#X-Vcs-Url:     git://git.gnome.org/libxslt
 Source2:        baselibs.conf
 Source3:        xslt-config.1.gz
-Source1001: 	libxslt.manifest
+Source1001:     libxslt.manifest
 BuildRequires:  libgcrypt-devel
 BuildRequires:  libgpg-error-devel
 BuildRequires:  libtool
@@ -33,7 +33,7 @@ present in other XSLT engines.
 %package devel
 Summary:        Include Files and Libraries mandatory for Development
 License:        LGPL-2.1+
-Group:          Development/Libraries/C and C++
+Group:          System/Libraries
 Requires:       %{name}-tools = %version
 Requires:       libxslt = %{version}
 Requires:       glibc-devel
@@ -59,13 +59,12 @@ This package contains xsltproc, a command line interface to the XSLT engine.
 cp %{SOURCE1001} .
 
 %build
-autoreconf --force --install
-%configure --disable-static --with-pic --without-python
-make %{?_smp_mflags}
+%autogen --disable-static --with-pic --without-python
+%__make %{?_smp_mflags}
 
 %check
 %if ! 0%{?qemu_user_space_build}
-make check
+%__make check
 %endif
 
 %install
@@ -105,5 +104,3 @@ install -ma=r '-t%{buildroot}%{_mandir}/man1' '%{SOURCE3}'
 %defattr(-,root,root)
 %{_bindir}/xsltproc
 %doc %{_mandir}/man1/xsltproc.*
-
-%changelog
