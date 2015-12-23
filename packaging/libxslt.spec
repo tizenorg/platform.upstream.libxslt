@@ -2,7 +2,7 @@ Name:           libxslt
 Version:        1.1.28
 Release:        0
 Summary:        XSL Transformation Library
-License:        MIT and GPL-2.0+
+License:        MIT
 Group:          System/Libraries
 Url:            http://xmlsoft.org/XSLT/
 Source:         %{name}-%{version}.tar.bz2
@@ -32,7 +32,6 @@ present in other XSLT engines.
 
 %package devel
 Summary:        Include Files and Libraries mandatory for Development
-License:        LGPL-2.1+
 Group:          System/Libraries
 Requires:       %{name}-tools = %version
 Requires:       libxslt = %{version}
@@ -47,7 +46,6 @@ to develop applications that require these.
 
 %package tools
 Summary:        Extended Stylesheet Language (XSL) Transformation utilities
-License:        MIT and GPL-2.0+
 Group:          Development/Tools
 Provides:       xsltproc = %version-%release
 
