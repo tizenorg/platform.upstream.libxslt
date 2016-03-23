@@ -18,17 +18,17 @@
 extern "C" {
 #endif
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltParseStylesheetAttributeSet	(xsltStylesheetPtr style,
 					 xmlNodePtr cur);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltFreeAttributeSetsHashes	(xsltStylesheetPtr style);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltApplyAttributeSet		(xsltTransformContextPtr ctxt,
 					 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 const xmlChar *attributes);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltResolveStylesheetAttributeSet(xsltStylesheetPtr style);
 #ifdef __cplusplus
 }

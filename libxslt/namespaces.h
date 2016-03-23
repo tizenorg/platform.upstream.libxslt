@@ -29,34 +29,34 @@ extern "C" {
  */
 #define	UNDEFINED_DEFAULT_NS	(const xmlChar *) -1L
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltNamespaceAlias	(xsltStylesheetPtr style,
 					 xmlNodePtr node);
-XSLTPUBFUN xmlNsPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlNsPtr XSLTCALL
 		xsltGetNamespace	(xsltTransformContextPtr ctxt,
 					 xmlNodePtr cur,
 					 xmlNsPtr ns,
 					 xmlNodePtr out);
-XSLTPUBFUN xmlNsPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlNsPtr XSLTCALL
 		xsltGetPlainNamespace	(xsltTransformContextPtr ctxt,
 					 xmlNodePtr cur,
 					 xmlNsPtr ns,
 					 xmlNodePtr out);
-XSLTPUBFUN xmlNsPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlNsPtr XSLTCALL
 		xsltGetSpecialNamespace	(xsltTransformContextPtr ctxt,
 					 xmlNodePtr cur,
 					 const xmlChar *URI,
 					 const xmlChar *prefix,
 					 xmlNodePtr out);
-XSLTPUBFUN xmlNsPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlNsPtr XSLTCALL
 		xsltCopyNamespace	(xsltTransformContextPtr ctxt,
 					 xmlNodePtr elem,
 					 xmlNsPtr ns);
-XSLTPUBFUN xmlNsPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlNsPtr XSLTCALL
 		xsltCopyNamespaceList	(xsltTransformContextPtr ctxt,
 					 xmlNodePtr node,
 					 xmlNsPtr cur);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFreeNamespaceAliasHashes
 					(xsltStylesheetPtr style);
 

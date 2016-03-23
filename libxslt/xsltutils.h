@@ -82,16 +82,16 @@ extern "C" {
 /*
  * Our own version of namespaced atributes lookup.
  */
-XSLTPUBFUN xmlChar * XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlChar * XSLTCALL
 		xsltGetNsProp	(xmlNodePtr node,
 				 const xmlChar *name,
 				 const xmlChar *nameSpace);
-XSLTPUBFUN const xmlChar * XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) const xmlChar * XSLTCALL
 		xsltGetCNsProp	(xsltStylesheetPtr style,
 				 xmlNodePtr node,
 				 const xmlChar *name,
 				 const xmlChar *nameSpace);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltGetUTF8Char	(const unsigned char *utf,
 				 int *len);
 
@@ -129,67 +129,67 @@ typedef enum {
 	if (ctxt->traceCode && (*(ctxt->traceCode) & code)) \
 	    call
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltDebugSetDefaultTrace(xsltDebugTraceCodes val);
-XSLTPUBFUN xsltDebugTraceCodes XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltDebugTraceCodes XSLTCALL
 		xsltDebugGetDefaultTrace(void);
 
 /*
  * XSLT specific error and debug reporting functions.
  */
-XSLTPUBVAR xmlGenericErrorFunc xsltGenericError;
-XSLTPUBVAR void *xsltGenericErrorContext;
-XSLTPUBVAR xmlGenericErrorFunc xsltGenericDebug;
-XSLTPUBVAR void *xsltGenericDebugContext;
+__attribute__ ((visibility ("default"))) XSLTPUBVAR xmlGenericErrorFunc xsltGenericError;
+__attribute__ ((visibility ("default"))) XSLTPUBVAR void *xsltGenericErrorContext;
+__attribute__ ((visibility ("default"))) XSLTPUBVAR xmlGenericErrorFunc xsltGenericDebug;
+__attribute__ ((visibility ("default"))) XSLTPUBVAR void *xsltGenericDebugContext;
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltPrintErrorContext		(xsltTransformContextPtr ctxt,
 	                                         xsltStylesheetPtr style,
 						 xmlNodePtr node);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltMessage			(xsltTransformContextPtr ctxt,
 						 xmlNodePtr node,
 						 xmlNodePtr inst);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltSetGenericErrorFunc		(void *ctx,
 						 xmlGenericErrorFunc handler);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltSetGenericDebugFunc		(void *ctx,
 						 xmlGenericErrorFunc handler);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltSetTransformErrorFunc	(xsltTransformContextPtr ctxt,
 						 void *ctx,
 						 xmlGenericErrorFunc handler);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltTransformError		(xsltTransformContextPtr ctxt,
 						 xsltStylesheetPtr style,
 						 xmlNodePtr node,
 						 const char *msg,
 						 ...);
 
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltSetCtxtParseOptions		(xsltTransformContextPtr ctxt,
 						 int options);
 /*
  * Sorting.
  */
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltDocumentSortFunction	(xmlNodeSetPtr list);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltSetSortFunc			(xsltSortFunc handler);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltSetCtxtSortFunc		(xsltTransformContextPtr ctxt,
 						 xsltSortFunc handler);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltDefaultSortFunction		(xsltTransformContextPtr ctxt,
 						 xmlNodePtr *sorts,
 						 int nbsorts);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltDoSortFunction		(xsltTransformContextPtr ctxt,
 						 xmlNodePtr * sorts,
 						 int nbsorts);
-XSLTPUBFUN xmlXPathObjectPtr * XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlXPathObjectPtr * XSLTCALL
 		xsltComputeSortResult		(xsltTransformContextPtr ctxt,
 						 xmlNodePtr sort);
 
@@ -197,15 +197,15 @@ XSLTPUBFUN xmlXPathObjectPtr * XSLTCALL
  * QNames handling.
  */
 
-XSLTPUBFUN const xmlChar * XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) const xmlChar * XSLTCALL
 		xsltSplitQName			(xmlDictPtr dict,
 						 const xmlChar *name,
 						 const xmlChar **prefix);
-XSLTPUBFUN const xmlChar * XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) const xmlChar * XSLTCALL
 		xsltGetQNameURI			(xmlNodePtr node,
 						 xmlChar **name);
 
-XSLTPUBFUN const xmlChar * XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) const xmlChar * XSLTCALL
 		xsltGetQNameURI2		(xsltStylesheetPtr style,
 						 xmlNodePtr node,
 						 const xmlChar **name);
@@ -213,24 +213,24 @@ XSLTPUBFUN const xmlChar * XSLTCALL
 /*
  * Output, reuse libxml I/O buffers.
  */
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltSaveResultTo		(xmlOutputBufferPtr buf,
 						 xmlDocPtr result,
 						 xsltStylesheetPtr style);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltSaveResultToFilename	(const char *URI,
 						 xmlDocPtr result,
 						 xsltStylesheetPtr style,
 						 int compression);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltSaveResultToFile		(FILE *file,
 						 xmlDocPtr result,
 						 xsltStylesheetPtr style);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltSaveResultToFd		(int fd,
 						 xmlDocPtr result,
 						 xsltStylesheetPtr style);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltSaveResultToString          (xmlChar **doc_txt_ptr,
                                                  int * doc_txt_len,
                                                  xmlDocPtr result,
@@ -239,10 +239,10 @@ XSLTPUBFUN int XSLTCALL
 /*
  * XPath interface
  */
-XSLTPUBFUN xmlXPathCompExprPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlXPathCompExprPtr XSLTCALL
 		xsltXPathCompile		(xsltStylesheetPtr style,
 						 const xmlChar *str);
-XSLTPUBFUN xmlXPathCompExprPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlXPathCompExprPtr XSLTCALL
 		xsltXPathCompileFlags		(xsltStylesheetPtr style,
 						 const xmlChar *str,
 						 int flags);
@@ -250,15 +250,15 @@ XSLTPUBFUN xmlXPathCompExprPtr XSLTCALL
 /*
  * Profiling.
  */
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltSaveProfiling		(xsltTransformContextPtr ctxt,
 						 FILE *output);
-XSLTPUBFUN xmlDocPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlDocPtr XSLTCALL
 		xsltGetProfileInformation	(xsltTransformContextPtr ctxt);
 
-XSLTPUBFUN long XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) long XSLTCALL
 		xsltTimestamp			(void);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltCalibrateAdjust		(long delta);
 
 /**
@@ -285,23 +285,23 @@ typedef enum {
     XSLT_DEBUG_QUIT
 } xsltDebugStatusCodes;
 
-XSLTPUBVAR int xslDebugStatus;
+__attribute__ ((visibility ("default"))) XSLTPUBVAR int xslDebugStatus;
 
 typedef void (*xsltHandleDebuggerCallback) (xmlNodePtr cur, xmlNodePtr node,
 			xsltTemplatePtr templ, xsltTransformContextPtr ctxt);
 typedef int (*xsltAddCallCallback) (xsltTemplatePtr templ, xmlNodePtr source);
 typedef void (*xsltDropCallCallback) (void);
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltSetDebuggerStatus		(int value);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltGetDebuggerStatus		(void);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltSetDebuggerCallbacks	(int no, void *block);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xslAddCall			(xsltTemplatePtr templ,
 						 xmlNodePtr source);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xslDropCall			(void);
 
 #ifdef __cplusplus

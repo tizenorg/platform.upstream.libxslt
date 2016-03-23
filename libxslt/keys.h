@@ -25,24 +25,24 @@ extern "C" {
  */
 #define NODE_IS_KEYED (1 >> 15)
 
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltAddKey		(xsltStylesheetPtr style,
 					 const xmlChar *name,
 					 const xmlChar *nameURI,
 					 const xmlChar *match,
 					 const xmlChar *use,
 					 xmlNodePtr inst);
-XSLTPUBFUN xmlNodeSetPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlNodeSetPtr XSLTCALL
 		xsltGetKey		(xsltTransformContextPtr ctxt,
 					 const xmlChar *name,
 					 const xmlChar *nameURI,
 					 const xmlChar *value);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltInitCtxtKeys	(xsltTransformContextPtr ctxt,
 					 xsltDocumentPtr doc);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFreeKeys		(xsltStylesheetPtr style);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFreeDocumentKeys	(xsltDocumentPtr doc);
 
 #ifdef __cplusplus

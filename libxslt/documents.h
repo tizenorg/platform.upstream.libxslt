@@ -20,25 +20,25 @@
 extern "C" {
 #endif
 
-XSLTPUBFUN xsltDocumentPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltDocumentPtr XSLTCALL
 		xsltNewDocument		(xsltTransformContextPtr ctxt,
 					 xmlDocPtr doc);
-XSLTPUBFUN xsltDocumentPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltDocumentPtr XSLTCALL
 		xsltLoadDocument	(xsltTransformContextPtr ctxt,
 					 const xmlChar *URI);
-XSLTPUBFUN xsltDocumentPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltDocumentPtr XSLTCALL
 		xsltFindDocument	(xsltTransformContextPtr ctxt,
 					 xmlDocPtr doc);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFreeDocuments	(xsltTransformContextPtr ctxt);
 
-XSLTPUBFUN xsltDocumentPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltDocumentPtr XSLTCALL
 		xsltLoadStyleDocument	(xsltStylesheetPtr style,
 					 const xmlChar *URI);
-XSLTPUBFUN xsltDocumentPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltDocumentPtr XSLTCALL
 		xsltNewStyleDocument	(xsltStylesheetPtr style,
 					 xmlDocPtr doc);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFreeStyleDocuments	(xsltStylesheetPtr style);
 
 /*
@@ -79,11 +79,11 @@ typedef xmlDocPtr (*xsltDocLoaderFunc)		(const xmlChar *URI,
 						 void *ctxt,
 						 xsltLoadType type);
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltSetLoaderFunc		(xsltDocLoaderFunc f);
 
 /* the loader may be needed by extension libraries so it is exported */
-XSLTPUBVAR xsltDocLoaderFunc xsltDocDefaultLoader;
+__attribute__ ((visibility ("default"))) XSLTPUBVAR xsltDocLoaderFunc xsltDocDefaultLoader;
 
 #ifdef __cplusplus
 }

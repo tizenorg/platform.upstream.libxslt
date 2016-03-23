@@ -49,10 +49,10 @@ typedef xmlChar xsltLocaleChar;
 
 #endif
 
-xsltLocale xsltNewLocale(const xmlChar *langName);
-void xsltFreeLocale(xsltLocale locale);
-xsltLocaleChar *xsltStrxfrm(xsltLocale locale, const xmlChar *string);
-int xsltLocaleStrcmp(xsltLocale locale, const xsltLocaleChar *str1, const xsltLocaleChar *str2);
-void xsltFreeLocales(void);
+__attribute__ ((visibility ("default"))) xsltLocale xsltNewLocale(const xmlChar *langName);
+__attribute__ ((visibility ("default"))) void xsltFreeLocale(xsltLocale locale);
+__attribute__ ((visibility ("default"))) xsltLocaleChar *xsltStrxfrm(xsltLocale locale, const xmlChar *string);
+__attribute__ ((visibility ("default"))) int xsltLocaleStrcmp(xsltLocale locale, const xsltLocaleChar *str1, const xsltLocaleChar *str2);
+__attribute__ ((visibility ("default"))) void xsltFreeLocales(void);
 
 #endif /* __XML_XSLTLOCALE_H__ */

@@ -32,19 +32,19 @@ typedef xsltCompMatch *xsltCompMatchPtr;
  * Pattern related interfaces.
  */
 
-XSLTPUBFUN xsltCompMatchPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltCompMatchPtr XSLTCALL
 		xsltCompilePattern	(const xmlChar *pattern,
 					 xmlDocPtr doc,
 					 xmlNodePtr node,
 					 xsltStylesheetPtr style,
 					 xsltTransformContextPtr runtime);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFreeCompMatchList	(xsltCompMatchPtr comp);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltTestCompMatchList	(xsltTransformContextPtr ctxt,
 					 xmlNodePtr node,
 					 xsltCompMatchPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltNormalizeCompSteps	(void *payload,
 					 void *data,
 					 const xmlChar *name);
@@ -52,18 +52,18 @@ XSLTPUBFUN void XSLTCALL
 /*
  * Template related interfaces.
  */
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltAddTemplate		(xsltStylesheetPtr style,
 					 xsltTemplatePtr cur,
 					 const xmlChar *mode,
 					 const xmlChar *modeURI);
-XSLTPUBFUN xsltTemplatePtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltTemplatePtr XSLTCALL
 		xsltGetTemplate		(xsltTransformContextPtr ctxt,
 					 xmlNodePtr node,
 					 xsltStylesheetPtr style);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFreeTemplateHashes	(xsltStylesheetPtr style);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltCleanupTemplates	(xsltStylesheetPtr style);
 
 #if 0
