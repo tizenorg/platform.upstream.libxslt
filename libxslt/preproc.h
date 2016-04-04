@@ -22,17 +22,17 @@ extern "C" {
 /*
  * Interfaces
  */
-extern const xmlChar *xsltExtMarker;
+__attribute__ ((visibility ("default"))) extern const xmlChar *xsltExtMarker;
 
-XSLTPUBFUN xsltElemPreCompPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltElemPreCompPtr XSLTCALL
 		xsltDocumentComp	(xsltStylesheetPtr style,
 					 xmlNodePtr inst,
 					 xsltTransformFunction function);
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltStylePreCompute	(xsltStylesheetPtr style,
 					 xmlNodePtr inst);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFreeStylePreComps	(xsltStylesheetPtr style);
 
 #ifdef __cplusplus

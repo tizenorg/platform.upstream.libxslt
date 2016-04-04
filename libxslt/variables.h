@@ -38,48 +38,48 @@ extern "C" {
  * Interfaces for the variable module.
  */
 
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltEvalGlobalVariables		(xsltTransformContextPtr ctxt);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltEvalUserParams		(xsltTransformContextPtr ctxt,
 						 const char **params);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltQuoteUserParams		(xsltTransformContextPtr ctxt,
 						 const char **params);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltEvalOneUserParam		(xsltTransformContextPtr ctxt,
 						 const xmlChar * name,
 						 const xmlChar * value);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltQuoteOneUserParam		(xsltTransformContextPtr ctxt,
 						 const xmlChar * name,
 						 const xmlChar * value);
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltParseGlobalVariable		(xsltStylesheetPtr style,
 						 xmlNodePtr cur);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltParseGlobalParam		(xsltStylesheetPtr style,
 						 xmlNodePtr cur);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltParseStylesheetVariable	(xsltTransformContextPtr ctxt,
 						 xmlNodePtr cur);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltParseStylesheetParam	(xsltTransformContextPtr ctxt,
 						 xmlNodePtr cur);
-XSLTPUBFUN xsltStackElemPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltStackElemPtr XSLTCALL
 		xsltParseStylesheetCallerParam	(xsltTransformContextPtr ctxt,
 						 xmlNodePtr cur);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltAddStackElemList		(xsltTransformContextPtr ctxt,
 						 xsltStackElemPtr elems);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFreeGlobalVariables		(xsltTransformContextPtr ctxt);
-XSLTPUBFUN xmlXPathObjectPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlXPathObjectPtr XSLTCALL
 		xsltVariableLookup		(xsltTransformContextPtr ctxt,
 						 const xmlChar *name,
 						 const xmlChar *ns_uri);
-XSLTPUBFUN xmlXPathObjectPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlXPathObjectPtr XSLTCALL
 		xsltXPathVariableLookup		(void *ctxt,
 						 const xmlChar *name,
 						 const xmlChar *ns_uri);

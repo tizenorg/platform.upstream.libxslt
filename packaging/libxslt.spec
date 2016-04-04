@@ -59,6 +59,9 @@ This package contains xsltproc, a command line interface to the XSLT engine.
 cp %{SOURCE1001} .
 
 %build
+export CFLAGS+=" -fvisibility=hidden"
+  export CXXFLAGS+=" -fvisibility=hidden"
+  
 %autogen --disable-static --with-pic --without-python
 %__make %{?_smp_mflags}
 

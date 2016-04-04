@@ -29,7 +29,7 @@ extern "C" {
 	(xmlXPathFuncLookupFunc) xsltXPathFunctionLookup,	\
 	(void *)(ctxt->xpathCtxt));
 
-XSLTPUBFUN xmlXPathFunction XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlXPathFunction XSLTCALL
 	xsltXPathFunctionLookup		(xmlXPathContextPtr ctxt,
 					 const xmlChar *name,
 					 const xmlChar *ns_uri);
@@ -38,28 +38,28 @@ XSLTPUBFUN xmlXPathFunction XSLTCALL
  * Interfaces for the functions implementations.
  */
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltDocumentFunction		(xmlXPathParserContextPtr ctxt,
 					 int nargs);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltKeyFunction			(xmlXPathParserContextPtr ctxt,
 					 int nargs);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltUnparsedEntityURIFunction	(xmlXPathParserContextPtr ctxt,
 					 int nargs);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltFormatNumberFunction	(xmlXPathParserContextPtr ctxt,
 					 int nargs);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltGenerateIdFunction		(xmlXPathParserContextPtr ctxt,
 					 int nargs);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltSystemPropertyFunction	(xmlXPathParserContextPtr ctxt,
 					 int nargs);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltElementAvailableFunction	(xmlXPathParserContextPtr ctxt,
 					 int nargs);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltFunctionAvailableFunction	(xmlXPathParserContextPtr ctxt,
 					 int nargs);
 
@@ -67,7 +67,7 @@ XSLTPUBFUN void XSLTCALL
  * And the registration
  */
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 	xsltRegisterAllFunctions	(xmlXPathContextPtr ctxt);
 
 #ifdef __cplusplus

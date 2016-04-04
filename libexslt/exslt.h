@@ -11,10 +11,10 @@
 extern "C" {
 #endif
 
-EXSLTPUBVAR const char *exsltLibraryVersion;
-EXSLTPUBVAR const int exsltLibexsltVersion;
-EXSLTPUBVAR const int exsltLibxsltVersion;
-EXSLTPUBVAR const int exsltLibxmlVersion;
+__attribute__ ((visibility ("default"))) EXSLTPUBVAR const char *exsltLibraryVersion;
+__attribute__ ((visibility ("default"))) EXSLTPUBVAR const int exsltLibexsltVersion;
+__attribute__ ((visibility ("default"))) EXSLTPUBVAR const int exsltLibxsltVersion;
+__attribute__ ((visibility ("default"))) EXSLTPUBVAR const int exsltLibxmlVersion;
 
 /**
  * EXSLT_COMMON_NAMESPACE:
@@ -72,27 +72,27 @@ EXSLTPUBVAR const int exsltLibxmlVersion;
  */
 #define SAXON_NAMESPACE ((const xmlChar *) "http://icl.com/saxon")
 
-EXSLTPUBFUN void EXSLTCALL exsltCommonRegister (void);
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) void EXSLTCALL exsltCommonRegister (void);
 #ifdef EXSLT_CRYPTO_ENABLED
-EXSLTPUBFUN void EXSLTCALL exsltCryptoRegister (void);
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) void EXSLTCALL exsltCryptoRegister (void);
 #endif
-EXSLTPUBFUN void EXSLTCALL exsltMathRegister (void);
-EXSLTPUBFUN void EXSLTCALL exsltSetsRegister (void);
-EXSLTPUBFUN void EXSLTCALL exsltFuncRegister (void);
-EXSLTPUBFUN void EXSLTCALL exsltStrRegister (void);
-EXSLTPUBFUN void EXSLTCALL exsltDateRegister (void);
-EXSLTPUBFUN void EXSLTCALL exsltSaxonRegister (void);
-EXSLTPUBFUN void EXSLTCALL exsltDynRegister(void);
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) void EXSLTCALL exsltMathRegister (void);
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) void EXSLTCALL exsltSetsRegister (void);
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) void EXSLTCALL exsltFuncRegister (void);
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) void EXSLTCALL exsltStrRegister (void);
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) void EXSLTCALL exsltDateRegister (void);
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) void EXSLTCALL exsltSaxonRegister (void);
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) void EXSLTCALL exsltDynRegister(void);
 
-EXSLTPUBFUN void EXSLTCALL exsltRegisterAll (void);
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) void EXSLTCALL exsltRegisterAll (void);
 
-EXSLTPUBFUN int EXSLTCALL exsltDateXpathCtxtRegister (xmlXPathContextPtr ctxt,
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) int EXSLTCALL exsltDateXpathCtxtRegister (xmlXPathContextPtr ctxt,
                                                       const xmlChar *prefix);
-EXSLTPUBFUN int EXSLTCALL exsltMathXpathCtxtRegister (xmlXPathContextPtr ctxt,
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) int EXSLTCALL exsltMathXpathCtxtRegister (xmlXPathContextPtr ctxt,
                                                       const xmlChar *prefix);
-EXSLTPUBFUN int EXSLTCALL exsltSetsXpathCtxtRegister (xmlXPathContextPtr ctxt,
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) int EXSLTCALL exsltSetsXpathCtxtRegister (xmlXPathContextPtr ctxt,
                                                       const xmlChar *prefix);
-EXSLTPUBFUN int EXSLTCALL exsltStrXpathCtxtRegister (xmlXPathContextPtr ctxt,
+EXSLTPUBFUN __attribute__ ((visibility ("default"))) int EXSLTCALL exsltStrXpathCtxtRegister (xmlXPathContextPtr ctxt,
                                                      const xmlChar *prefix);
 
 #ifdef __cplusplus

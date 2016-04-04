@@ -55,43 +55,43 @@ typedef int (*xsltSecurityCheck)	(xsltSecurityPrefsPtr sec,
 /*
  * Module interfaces
  */
-XSLTPUBFUN xsltSecurityPrefsPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltSecurityPrefsPtr XSLTCALL
 		    xsltNewSecurityPrefs	(void);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		    xsltFreeSecurityPrefs	(xsltSecurityPrefsPtr sec);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		    xsltSetSecurityPrefs	(xsltSecurityPrefsPtr sec,
 						 xsltSecurityOption option,
 						 xsltSecurityCheck func);
-XSLTPUBFUN xsltSecurityCheck XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltSecurityCheck XSLTCALL
 		    xsltGetSecurityPrefs	(xsltSecurityPrefsPtr sec,
 						 xsltSecurityOption option);
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		    xsltSetDefaultSecurityPrefs	(xsltSecurityPrefsPtr sec);
-XSLTPUBFUN xsltSecurityPrefsPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltSecurityPrefsPtr XSLTCALL
 		    xsltGetDefaultSecurityPrefs	(void);
 
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		    xsltSetCtxtSecurityPrefs	(xsltSecurityPrefsPtr sec,
 						 xsltTransformContextPtr ctxt);
 
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		    xsltSecurityAllow		(xsltSecurityPrefsPtr sec,
 						 xsltTransformContextPtr ctxt,
 						 const char *value);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		    xsltSecurityForbid		(xsltSecurityPrefsPtr sec,
 						 xsltTransformContextPtr ctxt,
 						 const char *value);
 /*
  * internal interfaces
  */
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		    xsltCheckWrite		(xsltSecurityPrefsPtr sec,
 						 xsltTransformContextPtr ctxt,
 						 const xmlChar *URL);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		    xsltCheckRead		(xsltSecurityPrefsPtr sec,
 						 xsltTransformContextPtr ctxt,
 						 const xmlChar *URL);

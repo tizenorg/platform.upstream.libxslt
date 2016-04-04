@@ -1839,94 +1839,94 @@ struct _xsltTransformContext {
 xsltDecimalFormatPtr	xsltDecimalFormatGetByName(xsltStylesheetPtr sheet,
 						   xmlChar *name);
  */
-XSLTPUBFUN xsltStylesheetPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltStylesheetPtr XSLTCALL
 			xsltNewStylesheet	(void);
-XSLTPUBFUN xsltStylesheetPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltStylesheetPtr XSLTCALL
 			xsltParseStylesheetFile	(const xmlChar* filename);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 			xsltFreeStylesheet	(xsltStylesheetPtr style);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 			xsltIsBlank		(xmlChar *str);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 			xsltFreeStackElemList	(xsltStackElemPtr elem);
-XSLTPUBFUN xsltDecimalFormatPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltDecimalFormatPtr XSLTCALL
 			xsltDecimalFormatGetByName(xsltStylesheetPtr style,
 						 xmlChar *name);
 
-XSLTPUBFUN xsltStylesheetPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltStylesheetPtr XSLTCALL
 			xsltParseStylesheetProcess(xsltStylesheetPtr ret,
 						 xmlDocPtr doc);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 			xsltParseStylesheetOutput(xsltStylesheetPtr style,
 						 xmlNodePtr cur);
-XSLTPUBFUN xsltStylesheetPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltStylesheetPtr XSLTCALL
 			xsltParseStylesheetDoc	(xmlDocPtr doc);
-XSLTPUBFUN xsltStylesheetPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltStylesheetPtr XSLTCALL
 			xsltParseStylesheetImportedDoc(xmlDocPtr doc,
 						xsltStylesheetPtr style);
-XSLTPUBFUN xsltStylesheetPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltStylesheetPtr XSLTCALL
 			xsltLoadStylesheetPI	(xmlDocPtr doc);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 			xsltNumberFormat	(xsltTransformContextPtr ctxt,
 						 xsltNumberDataPtr data,
 						 xmlNodePtr node);
-XSLTPUBFUN xmlXPathError XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlXPathError XSLTCALL
 			xsltFormatNumberConversion(xsltDecimalFormatPtr self,
 						 xmlChar *format,
 						 double number,
 						 xmlChar **result);
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 			xsltParseTemplateContent(xsltStylesheetPtr style,
 						 xmlNodePtr templ);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 			xsltAllocateExtra	(xsltStylesheetPtr style);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 			xsltAllocateExtraCtxt	(xsltTransformContextPtr ctxt);
 /*
  * Extra functions for Result Value Trees
  */
-XSLTPUBFUN xmlDocPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlDocPtr XSLTCALL
 			xsltCreateRVT		(xsltTransformContextPtr ctxt);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 			xsltRegisterTmpRVT	(xsltTransformContextPtr ctxt,
 						 xmlDocPtr RVT);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 			xsltRegisterLocalRVT	(xsltTransformContextPtr ctxt,
 						 xmlDocPtr RVT);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 			xsltRegisterPersistRVT	(xsltTransformContextPtr ctxt,
 						 xmlDocPtr RVT);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 			xsltExtensionInstructionResultRegister(
 						 xsltTransformContextPtr ctxt,
 						 xmlXPathObjectPtr obj);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 			xsltExtensionInstructionResultFinalize(
 						 xsltTransformContextPtr ctxt);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 			xsltFreeRVTs		(xsltTransformContextPtr ctxt);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 			xsltReleaseRVT		(xsltTransformContextPtr ctxt,
 						 xmlDocPtr RVT);
 /*
  * Extra functions for Attribute Value Templates
  */
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 			xsltCompileAttr		(xsltStylesheetPtr style,
 						 xmlAttrPtr attr);
-XSLTPUBFUN xmlChar * XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlChar * XSLTCALL
 			xsltEvalAVT		(xsltTransformContextPtr ctxt,
 						 void *avt,
 						 xmlNodePtr node);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 			xsltFreeAVTList		(void *avt);
 
 /*
  * Extra function for successful xsltCleanupGlobals / xsltInit sequence.
  */
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 			xsltUninit		(void);
 
 /************************************************************************
@@ -1956,11 +1956,11 @@ XSLTPUBFUN int XSLTCALL
  *  Transformation-time functions for *internal* use only               *
  *									*
  ************************************************************************/
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 			xsltInitCtxtKey		(xsltTransformContextPtr ctxt,
 						 xsltDocumentPtr doc,
 						 xsltKeyDefPtr keyd);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 			xsltInitAllDocKeys	(xsltTransformContextPtr ctxt);
 #ifdef __cplusplus
 }

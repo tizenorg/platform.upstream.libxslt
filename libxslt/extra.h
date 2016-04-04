@@ -57,19 +57,19 @@ extern "C" {
 	"http://nwalsh.com/xslt/ext/com.nwalsh.saxon.CVS")
 
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFunctionNodeSet	(xmlXPathParserContextPtr ctxt,
 					 int nargs);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltDebug		(xsltTransformContextPtr ctxt,
 					 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
 
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltRegisterExtras	(xsltTransformContextPtr ctxt);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltRegisterAllExtras	(void);
 
 #ifdef __cplusplus

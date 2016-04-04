@@ -30,7 +30,7 @@ extern "C" {
  *
  */
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltInitGlobals                 (void);
 
 /**
@@ -81,11 +81,11 @@ typedef void (*xsltExtShutdownFunction) (xsltTransformContextPtr ctxt,
 					 const xmlChar *URI,
 					 void *data);
 
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltRegisterExtModule	(const xmlChar *URI,
 					 xsltExtInitFunction initFunc,
 					 xsltExtShutdownFunction shutdownFunc);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltRegisterExtModuleFull
 					(const xmlChar * URI,
 					 xsltExtInitFunction initFunc,
@@ -93,14 +93,14 @@ XSLTPUBFUN int XSLTCALL
 					 xsltStyleExtInitFunction styleInitFunc,
 					 xsltStyleExtShutdownFunction styleShutdownFunc);
 
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltUnregisterExtModule	(const xmlChar * URI);
 
-XSLTPUBFUN void * XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void * XSLTCALL
 		xsltGetExtData		(xsltTransformContextPtr ctxt,
 					 const xmlChar *URI);
 
-XSLTPUBFUN void * XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void * XSLTCALL
 		xsltStyleGetExtData	(xsltStylesheetPtr style,
 					 const xmlChar *URI);
 #ifdef XSLT_REFACTORED
@@ -109,28 +109,28 @@ XSLTPUBFUN void * XSLTCALL
 					 xsltStylesheetPtr style,
 					 const xmlChar * URI);
 #endif
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltShutdownCtxtExts	(xsltTransformContextPtr ctxt);
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltShutdownExts	(xsltStylesheetPtr style);
 
-XSLTPUBFUN xsltTransformContextPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltTransformContextPtr XSLTCALL
 		xsltXPathGetTransformContext
 					(xmlXPathParserContextPtr ctxt);
 
 /*
  * extension functions
 */
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltRegisterExtModuleFunction
 					(const xmlChar *name,
 					 const xmlChar *URI,
 					 xmlXPathFunction function);
-XSLTPUBFUN xmlXPathFunction XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlXPathFunction XSLTCALL
 	xsltExtModuleFunctionLookup	(const xmlChar *name,
 					 const xmlChar *URI);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltUnregisterExtModuleFunction
 					(const xmlChar *name,
 					 const xmlChar *URI);
@@ -143,36 +143,36 @@ typedef xsltElemPreCompPtr (*xsltPreComputeFunction)
 					 xmlNodePtr inst,
 					 xsltTransformFunction function);
 
-XSLTPUBFUN xsltElemPreCompPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltElemPreCompPtr XSLTCALL
 		xsltNewElemPreComp	(xsltStylesheetPtr style,
 					 xmlNodePtr inst,
 					 xsltTransformFunction function);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltInitElemPreComp	(xsltElemPreCompPtr comp,
 					 xsltStylesheetPtr style,
 					 xmlNodePtr inst,
 					 xsltTransformFunction function,
 					 xsltElemPreCompDeallocator freeFunc);
 
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltRegisterExtModuleElement
 					(const xmlChar *name,
 					 const xmlChar *URI,
 					 xsltPreComputeFunction precomp,
 					 xsltTransformFunction transform);
-XSLTPUBFUN xsltTransformFunction XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltTransformFunction XSLTCALL
 		xsltExtElementLookup	(xsltTransformContextPtr ctxt,
 					 const xmlChar *name,
 					 const xmlChar *URI);
-XSLTPUBFUN xsltTransformFunction XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltTransformFunction XSLTCALL
 		xsltExtModuleElementLookup
 					(const xmlChar *name,
 					 const xmlChar *URI);
-XSLTPUBFUN xsltPreComputeFunction XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltPreComputeFunction XSLTCALL
 		xsltExtModuleElementPreComputeLookup
 					(const xmlChar *name,
 					 const xmlChar *URI);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltUnregisterExtModuleElement
 					(const xmlChar *name,
 					 const xmlChar *URI);
@@ -183,28 +183,28 @@ XSLTPUBFUN int XSLTCALL
 typedef void (*xsltTopLevelFunction)	(xsltStylesheetPtr style,
 					 xmlNodePtr inst);
 
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltRegisterExtModuleTopLevel
 					(const xmlChar *name,
 					 const xmlChar *URI,
 					 xsltTopLevelFunction function);
-XSLTPUBFUN xsltTopLevelFunction XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltTopLevelFunction XSLTCALL
 		xsltExtModuleTopLevelLookup
 					(const xmlChar *name,
 					 const xmlChar *URI);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltUnregisterExtModuleTopLevel
 					(const xmlChar *name,
 					 const xmlChar *URI);
 
 
 /* These 2 functions are deprecated for use within modules. */
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltRegisterExtFunction	(xsltTransformContextPtr ctxt,
 					 const xmlChar *name,
 					 const xmlChar *URI,
 					 xmlXPathFunction function);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltRegisterExtElement	(xsltTransformContextPtr ctxt,
 					 const xmlChar *name,
 					 const xmlChar *URI,
@@ -215,24 +215,24 @@ XSLTPUBFUN int XSLTCALL
  * Those are used by the XSLT (pre)processor.
  */
 
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltRegisterExtPrefix	(xsltStylesheetPtr style,
 					 const xmlChar *prefix,
 					 const xmlChar *URI);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltCheckExtPrefix	(xsltStylesheetPtr style,
 					 const xmlChar *URI);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltCheckExtURI		(xsltStylesheetPtr style,
 					 const xmlChar *URI);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltInitCtxtExts	(xsltTransformContextPtr ctxt);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFreeCtxtExts	(xsltTransformContextPtr ctxt);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFreeExts		(xsltStylesheetPtr style);
 
-XSLTPUBFUN xsltElemPreCompPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltElemPreCompPtr XSLTCALL
 		xsltPreComputeExtModuleElement
 					(xsltStylesheetPtr style,
 					 xmlNodePtr inst);
@@ -241,16 +241,16 @@ XSLTPUBFUN xsltElemPreCompPtr XSLTCALL
  * Used by exslt initialisation
  */
 
-XSLTPUBFUN xmlHashTablePtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlHashTablePtr XSLTCALL
 		xsltGetExtInfo		(xsltStylesheetPtr style,
 					 const xmlChar *URI);
 
 /**
  * Test module http://xmlsoft.org/XSLT/
  */
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltRegisterTestModule	(void);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltDebugDumpExtensions	(FILE * output);
 
 

@@ -59,47 +59,47 @@ extern "C" {
  *
  * This value is used to detect templates loops.
  */
-XSLTPUBVAR int xsltMaxDepth;
+__attribute__ ((visibility ("default"))) XSLTPUBVAR int xsltMaxDepth;
 
 /**
  *  * xsltMaxVars:
  *   *
  *    * This value is used to detect templates loops.
  *     */
-XSLTPUBVAR int xsltMaxVars;
+__attribute__ ((visibility ("default"))) XSLTPUBVAR int xsltMaxVars;
 
 /**
  * xsltEngineVersion:
  *
  * The version string for libxslt.
  */
-XSLTPUBVAR const char *xsltEngineVersion;
+__attribute__ ((visibility ("default"))) XSLTPUBVAR const char *xsltEngineVersion;
 
 /**
  * xsltLibxsltVersion:
  *
  * The version of libxslt compiled.
  */
-XSLTPUBVAR const int xsltLibxsltVersion;
+__attribute__ ((visibility ("default"))) XSLTPUBVAR const int xsltLibxsltVersion;
 
 /**
  * xsltLibxmlVersion:
  *
  * The version of libxml libxslt was compiled against.
  */
-XSLTPUBVAR const int xsltLibxmlVersion;
+__attribute__ ((visibility ("default"))) XSLTPUBVAR const int xsltLibxmlVersion;
 
 /*
  * Global initialization function.
  */
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltInit		(void);
 
 /*
  * Global cleanup function.
  */
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltCleanupGlobals	(void);
 
 #ifdef __cplusplus

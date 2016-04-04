@@ -24,55 +24,55 @@ extern "C" {
 /**
  * XInclude default processing.
  */
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltSetXIncludeDefault	(int xinclude);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltGetXIncludeDefault	(void);
 
 /**
  * Export context to users.
  */
-XSLTPUBFUN xsltTransformContextPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xsltTransformContextPtr XSLTCALL
 		xsltNewTransformContext	(xsltStylesheetPtr style,
 					 xmlDocPtr doc);
 
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltFreeTransformContext(xsltTransformContextPtr ctxt);
 
-XSLTPUBFUN xmlDocPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlDocPtr XSLTCALL
 		xsltApplyStylesheetUser	(xsltStylesheetPtr style,
 					 xmlDocPtr doc,
 					 const char **params,
 					 const char *output,
 					 FILE * profile,
 					 xsltTransformContextPtr userCtxt);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
                 xsltProcessOneNode      (xsltTransformContextPtr ctxt,
                                          xmlNodePtr node,
                                          xsltStackElemPtr params);
 /**
  * Private Interfaces.
  */
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltApplyStripSpaces	(xsltTransformContextPtr ctxt,
 					 xmlNodePtr node);
-XSLTPUBFUN xmlDocPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlDocPtr XSLTCALL
 		xsltApplyStylesheet	(xsltStylesheetPtr style,
 					 xmlDocPtr doc,
 					 const char **params);
-XSLTPUBFUN xmlDocPtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlDocPtr XSLTCALL
 		xsltProfileStylesheet	(xsltStylesheetPtr style,
 					 xmlDocPtr doc,
 					 const char **params,
 					 FILE * output);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltRunStylesheet	(xsltStylesheetPtr style,
 					 xmlDocPtr doc,
 					 const char **params,
 					 const char *output,
 					 xmlSAXHandlerPtr SAX,
 					 xmlOutputBufferPtr IObuf);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltRunStylesheetUser	(xsltStylesheetPtr style,
 					 xmlDocPtr doc,
 					 const char **params,
@@ -81,119 +81,119 @@ XSLTPUBFUN int XSLTCALL
 					 xmlOutputBufferPtr IObuf,
 					 FILE * profile,
 					 xsltTransformContextPtr userCtxt);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltApplyOneTemplate	(xsltTransformContextPtr ctxt,
 					 xmlNodePtr node,
 					 xmlNodePtr list,
 					 xsltTemplatePtr templ,
 					 xsltStackElemPtr params);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltDocumentElem	(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltSort		(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltCopy		(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltText		(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltElement		(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltComment		(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltAttribute		(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltProcessingInstruction(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltCopyOf		(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltValueOf		(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltNumber		(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltApplyImports	(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltCallTemplate	(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltApplyTemplates	(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltChoose		(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltIf			(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltForEach		(xsltTransformContextPtr ctxt,
 	                                 xmlNodePtr node,
 					 xmlNodePtr inst,
 					 xsltStylePreCompPtr comp);
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltRegisterAllElement	(xsltTransformContextPtr ctxt);
 
-XSLTPUBFUN xmlNodePtr XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) xmlNodePtr XSLTCALL
 		xsltCopyTextString	(xsltTransformContextPtr ctxt,
 					 xmlNodePtr target,
 					 const xmlChar *string,
 					 int noescape);
 
 /* Following 2 functions needed for libexslt/functions.c */
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xsltLocalVariablePop	(xsltTransformContextPtr ctxt,
 					 int limitNr,
 					 int level);
-XSLTPUBFUN int XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) int XSLTCALL
 		xsltLocalVariablePush	(xsltTransformContextPtr ctxt,
 					 xsltStackElemPtr variable,
 					 int level);
 /*
  * Hook for the debugger if activated.
  */
-XSLTPUBFUN void XSLTCALL
+XSLTPUBFUN __attribute__ ((visibility ("default"))) void XSLTCALL
 		xslHandleDebugger	(xmlNodePtr cur,
 					 xmlNodePtr node,
 					 xsltTemplatePtr templ,
