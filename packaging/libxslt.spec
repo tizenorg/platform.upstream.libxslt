@@ -1,14 +1,17 @@
+%define run_tests 0
+%if %{run_tests}
+    # check is defined off at .rpmmacros file.
+    %define check %%check
+%endif
+
 Name:           libxslt
-Version:        1.1.28
+Version:        1.1.29
 Release:        0
 Summary:        XSL Transformation Library
-License:        MIT and GPL-2.0+
+License:        MIT
 Group:          System/Libraries
 Url:            http://xmlsoft.org/XSLT/
 Source:         %{name}-%{version}.tar.bz2
-#X-Vcs-Url:     git://git.gnome.org/libxslt
-Source2:        baselibs.conf
-Source3:        xslt-config.1.gz
 Source1001:     libxslt.manifest
 BuildRequires:  libgcrypt-devel
 BuildRequires:  libgpg-error-devel
@@ -59,23 +62,17 @@ This package contains xsltproc, a command line interface to the XSLT engine.
 cp %{SOURCE1001} .
 
 %build
-%autogen --disable-static --with-pic --without-python
+%configure --disable-static --with-pic --without-python
 %__make %{?_smp_mflags}
 
 %check
-%if ! 0%{?qemu_user_space_build}
-%__make check
+%if %{run_tests}
+    %__make check || exit 0
 %endif
 
 %install
 %make_install
-
-# Unwanted doc stuff
-rm -fr %{buildroot}%{_datadir}/doc
-
-# the manual page is required
-install -ma=r '-t%{buildroot}%{_mandir}/man1' '%{SOURCE3}'
-
+%remove_docs
 
 %post -n libxslt -p /sbin/ldconfig
 
@@ -96,11 +93,8 @@ install -ma=r '-t%{buildroot}%{_mandir}/man1' '%{SOURCE3}'
 %{_includedir}/*
 %{_datadir}/aclocal/*
 %{_bindir}/xslt-config
-%doc %{_mandir}/man1/xslt-config.*
-%doc %{_mandir}/man3/*
 
 %files tools
 %manifest %{name}.manifest
 %defattr(-,root,root)
 %{_bindir}/xsltproc
-%doc %{_mandir}/man1/xsltproc.*

@@ -572,7 +572,7 @@ main(int argc, char **argv)
 
     sec = xsltNewSecurityPrefs();
     xsltSetDefaultSecurityPrefs(sec);
-    defaultEntityLoader = getenv("RPM_PACKAGE_NAME") ? xmlNoNetExternalEntityLoader : xmlGetExternalEntityLoader();
+    defaultEntityLoader = xmlGetExternalEntityLoader();
     xmlSetExternalEntityLoader(xsltprocExternalEntityLoader);
 
     for (i = 1; i < argc; i++) {
